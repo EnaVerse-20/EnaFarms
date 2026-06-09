@@ -10,9 +10,9 @@ function Navbar() {
 
         <ul className="flex gap-6 font-medium">
           <li><a href="#">Home</a></li>
-          <li><a href="#">Services</a></li>
+          <li><a href="#">Solutions</a></li>
           <li><a href="#">Market</a></li>
-          <li><a href="#">About</a></li>
+          <li><a href="#">Weather</a></li>
           <li><a href="#">Contact</a></li>
         </ul>
 
