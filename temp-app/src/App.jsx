@@ -3,6 +3,8 @@ import Hero from "./components/Hero";
 import Services from "./components/Services";
 import Weather from "./components/Weather";
 import Schemes from "./components/Schemes";
+import Marketplace from "./components/marketPlace";
+import Footer from "./components/Footer";
 function App() {
   return (
     <>
@@ -11,6 +13,8 @@ function App() {
       <Services/>
       <Weather/>
       <Schemes/>
+      <Marketplace/>
+      <Footer/>
     </>
   );
 }
