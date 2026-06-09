@@ -1,54 +1,66 @@
 function Services() {
   const services = [
     {
+      icon: "🌦️",
       title: "Weather Intelligence",
-      description: "Real-time weather updates and forecasts."
+      description: "Real-time weather forecasts and farming alerts."
     },
     {
+      icon: "📈",
       title: "Market Prices",
-      description: "Track crop prices and market trends."
+      description: "Track mandi rates and market trends instantly."
     },
     {
+      icon: "🌱",
       title: "Crop Advisory",
-      description: "Expert guidance for better farming decisions."
+      description: "Expert recommendations for better crop yield."
     },
     {
+      icon: "🏛️",
       title: "Government Schemes",
-      description: "Latest agricultural schemes and benefits."
+      description: "Access farmer benefits and subsidy programs."
     },
     {
+      icon: "🚜",
       title: "Modern Farming Tools",
-      description: "Technology-driven solutions for farmers."
+      description: "Smart technology solutions for agriculture."
     },
     {
+      icon: "🤝",
       title: "Farmer Community",
-      description: "Connect and learn from other farmers."
+      description: "Connect, learn and grow with fellow farmers."
     }
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-6">
-        
-        <h2 className="text-4xl font-bold text-center text-gray-900">
-          Our Services
-        </h2>
 
-        <p className="text-center text-gray-600 mt-4 mb-12">
-          Everything a farmer needs, from seed to market.
-        </p>
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
+            Our Services
+          </h2>
 
-        <div className="grid md:grid-cols-3 gap-8">
+          <p className="text-gray-600 mt-4 text-lg">
+            Everything a farmer needs, from seed to market.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <div
               key={index}
-              className="p-6 rounded-2xl shadow-lg hover:shadow-2xl transition duration-300 border"
+              className="bg-white border border-green-100 rounded-3xl p-8 shadow-md hover:shadow-2xl hover:-translate-y-2 transition duration-300"
             >
-              <h3 className="text-xl font-bold text-green-700 mb-3">
+              <div className="text-5xl mb-5">
+                {service.icon}
+              </div>
+
+              <h3 className="text-2xl font-bold text-gray-900 mb-3">
                 {service.title}
               </h3>
 
-              <p className="text-gray-600">
+              <p className="text-gray-600 leading-relaxed">
                 {service.description}
               </p>
             </div>
