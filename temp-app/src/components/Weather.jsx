@@ -1,23 +1,26 @@
+import { FaSun, FaCloudRain, FaTint } from "react-icons/fa";
+import { motion } from "framer-motion";
+
 function Weather() {
   const weatherData = [
     {
-      icon: "☀️",
+      icon: <FaSun />,
       title: "Today's Weather",
       value: "28°C",
-      description: "Partly cloudy with pleasant conditions."
+      description: "Partly cloudy with pleasant conditions.",
     },
     {
-      icon: "🌧️",
+      icon: <FaCloudRain />,
       title: "Rain Probability",
       value: "65%",
-      description: "Expected rainfall within the next 24 hours."
+      description: "Expected rainfall within the next 24 hours.",
     },
     {
-      icon: "💧",
+      icon: <FaTint />,
       title: "Humidity",
       value: "72%",
-      description: "Suitable moisture level for crop growth."
-    }
+      description: "Suitable moisture level for crop growth.",
+    },
   ];
 
   return (
@@ -36,11 +39,19 @@ function Weather() {
 
         <div className="grid md:grid-cols-3 gap-8">
           {weatherData.map((item, index) => (
-            <div
+            <motion.div
               key={index}
-              className="bg-white border border-green-100 rounded-3xl p-8 shadow-md hover:shadow-2xl hover:-translate-y-2 transition duration-300"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.5,
+                delay: index * 0.1,
+              }}
+              whileHover={{ scale: 1.05 }}
+              className="bg-white border border-green-100 rounded-3xl p-8 shadow-md hover:shadow-2xl"
             >
-              <div className="text-5xl mb-5">
+              <div className="text-5xl mb-5 text-green-700">
                 {item.icon}
               </div>
 
@@ -55,7 +66,7 @@ function Weather() {
               <p className="text-gray-600 leading-relaxed">
                 {item.description}
               </p>
-            </div>
+            </motion.div>
           ))}
         </div>
 

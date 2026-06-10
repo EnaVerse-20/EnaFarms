@@ -1,25 +1,38 @@
+import {
+  FaMoneyBillWave,
+  FaShieldAlt,
+  FaLeaf,
+  FaUniversity,
+} from "react-icons/fa";
+
+import { motion } from "framer-motion";
+
 function Schemes() {
   const schemes = [
     {
-      icon: "💰",
+      icon: <FaMoneyBillWave />,
       title: "PM-KISAN",
-      description: "Income support provided directly to eligible farmers."
+      description:
+        "Income support provided directly to eligible farmers.",
     },
     {
-      icon: "🛡️",
+      icon: <FaShieldAlt />,
       title: "PMFBY",
-      description: "Crop insurance scheme protecting farmers from losses."
+      description:
+        "Crop insurance scheme protecting farmers from losses.",
     },
     {
-      icon: "🌱",
+      icon: <FaLeaf />,
       title: "Soil Health Card",
-      description: "Provides information about soil nutrients and quality."
+      description:
+        "Provides information about soil nutrients and quality.",
     },
     {
-      icon: "🏦",
+      icon: <FaUniversity />,
       title: "Kisan Credit Card",
-      description: "Easy access to agricultural credit and loans."
-    }
+      description:
+        "Easy access to agricultural credit and loans.",
+    },
   ];
 
   return (
@@ -38,11 +51,19 @@ function Schemes() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {schemes.map((scheme, index) => (
-            <div
+            <motion.div
               key={index}
-              className="bg-green-50 border border-green-100 rounded-3xl p-8 shadow-md hover:shadow-2xl hover:-translate-y-2 transition duration-300"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.5,
+                delay: index * 0.1,
+              }}
+              whileHover={{ scale: 1.05 }}
+              className="bg-green-50 border border-green-100 rounded-3xl p-8 shadow-md hover:shadow-2xl"
             >
-              <div className="text-5xl mb-5">
+              <div className="text-5xl mb-5 text-green-700">
                 {scheme.icon}
               </div>
 
@@ -53,7 +74,7 @@ function Schemes() {
               <p className="text-gray-600 leading-relaxed">
                 {scheme.description}
               </p>
-            </div>
+            </motion.div>
           ))}
         </div>
 

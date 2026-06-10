@@ -1,9 +1,15 @@
+import { motion } from "framer-motion";
+
 function Hero() {
   return (
     <section className="min-h-[90vh] bg-gradient-to-br from-green-50 to-green-100 flex items-center">
       <div className="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-12 items-center">
 
-        <div>
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+        >
           <span className="inline-block bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-semibold mb-5">
             Welcome to EnaFarms 🌱
           </span>
@@ -31,41 +37,34 @@ function Hero() {
 
           <div className="grid grid-cols-3 gap-4 mt-12">
             <div className="bg-white p-4 rounded-xl shadow-md text-center">
-              <h3 className="text-2xl font-bold text-green-700">
-                10K+
-              </h3>
-              <p className="text-sm text-gray-600">
-                Farmers
-              </p>
+              <h3 className="text-2xl font-bold text-green-700">10K+</h3>
+              <p className="text-sm text-gray-600">Farmers</p>
             </div>
 
             <div className="bg-white p-4 rounded-xl shadow-md text-center">
-              <h3 className="text-2xl font-bold text-green-700">
-                500+
-              </h3>
-              <p className="text-sm text-gray-600">
-                Villages
-              </p>
+              <h3 className="text-2xl font-bold text-green-700">500+</h3>
+              <p className="text-sm text-gray-600">Villages</p>
             </div>
 
             <div className="bg-white p-4 rounded-xl shadow-md text-center">
-              <h3 className="text-2xl font-bold text-green-700">
-                100+
-              </h3>
-              <p className="text-sm text-gray-600">
-                Crops
-              </p>
+              <h3 className="text-2xl font-bold text-green-700">100+</h3>
+              <p className="text-sm text-gray-600">Crops</p>
             </div>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="flex justify-center">
+        <motion.div
+          className="flex justify-center"
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
           <img
             src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854"
             alt="Farm"
             className="rounded-3xl shadow-2xl w-full max-w-xl hover:scale-105 transition duration-500"
           />
-        </div>
+        </motion.div>
 
       </div>
     </section>
